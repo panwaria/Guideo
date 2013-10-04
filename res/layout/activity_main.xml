@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.example.spheroapp"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background_leftpane_light_blue"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="90dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text=" Follow these steps:"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            />
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="horizontal"  >
+            <Button
+                android:id="@+id/btn_01_select_source"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Select Source"
+                android:textStyle="bold"
+                android:textColor="#ffff"
+                android:textSize="20sp"
+                android:background="@drawable/btn_grey"
+                android:onClick="onStepButtonClick" />
+
+            <ImageView
+                android:id="@+id/tick_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="right"
+                android:src="@drawable/tick_48x48"
+                android:visibility="gone" >
+            </ImageView>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/btn_02_select_dest"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Select Destination"
+                android:textStyle="bold"
+                android:textColor="#ffff"
+                android:textSize="20sp"
+                android:background="@drawable/btn_grey"
+                android:onClick="onStepButtonClick" />
+
+            <ImageView
+                android:id="@+id/tick_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/tick_48x48"
+                android:visibility="gone" >
+            </ImageView>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/btn_03_orient_guide"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Orient Guideo"
+                android:textStyle="bold"
+                android:textColor="#ffff"
+                android:textSize="20sp"
+                android:background="@drawable/btn_grey"
+                android:onClick="onStepButtonClick" />
+
+            <ImageView
+                android:id="@+id/tick_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/tick_48x48"
+                android:visibility="gone" >
+            </ImageView>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/btn_04_start_guide"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Start Guiding"
+                android:textStyle="bold"
+                android:textColor="#ffff"
+                android:textSize="20sp"
+                android:background="@drawable/btn_grey"
+                android:onClick="onStepButtonClick" />
+
+            <ImageView
+                android:id="@+id/tick_04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/tick_48x48"
+                android:visibility="gone" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp" >
+        <Button
+                android:id="@+id/btn_05_restart_tour"
+                android:layout_width="200dp"
+            	android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Start New Tour"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:background="@drawable/btn_blue"
+                android:onClick="onStepButtonClick" />
+        </LinearLayout>
+        
+        <Button
+            android:id="@+id/collision_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:onClick="onCollisionDetectorButtonClicked"
+            android:text="@string/collision_detector"
+            android:textColor="@android:color/white"
+            android:textSize="26sp" 
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/control_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:onClick="onControlSpheroButtonClicked"
+            android:text="@string/control_sphero"
+            android:textColor="@android:color/white"
+            android:textSize="26sp" 
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/speech_reco_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Speech Recognition"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" >
+        
+    <LinearLayout
+        android:id="@+id/app"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/route_03"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/map_zone_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+	        <ImageView
+	            android:id="@+id/BtnSlide"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="left"
+	            android:layout_margin="5dp"
+	            android:background="@drawable/btn_blue"
+	            android:src="@drawable/menulist_blue"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentTop="true" />
+	        <TextView
+	            android:id="@+id/app_status"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:gravity="center"
+	            android:text="Status"
+	            android:textColor="#164593"
+	            android:textStyle="bold"
+	            android:textSize="23sp"
+	            android:layout_marginTop="5dp"
+	            android:layout_alignParentRight="true"
+	            android:layout_alignParentTop="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/map_zone_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/map_zone_1a"
+                android:layout_weight="1"
+           		android:layout_width="0dip"
+            	android:layout_height="match_parent"
+                >
+             <Button
+                 android:id="@+id/destOne_btn"
+                 android:layout_width="120dp"
+                 android:layout_height="120dp"
+                 android:layout_alignParentRight="true"
+                 android:text="ROOM 1"
+                 android:layout_marginRight="20dp"
+                 android:textStyle="bold"
+                 android:textColor="@android:color/white"
+                 android:background="@drawable/btn_grey"
+                 android:onClick="onRoomButtonClick"
+                 />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/map_zone_1b"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+             <Button 
+                 android:id="@+id/destTwo_btn"
+                 android:layout_width="120dp"
+                 android:layout_height="120dp"
+                 android:text="ROOM 2"
+                 android:layout_marginRight="80dp"
+                 android:textStyle="bold"
+                 android:textColor="@android:color/white"
+                 android:background="@drawable/btn_grey"
+                 android:layout_alignParentRight="true"
+                 android:onClick="onRoomButtonClick"
+                 />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/map_zone_2"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/destOrigin_btn"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="ORIGIN"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_grey"
+                 android:onClick="onRoomButtonClick"
+              />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/map_zone_3"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/destThree_btn"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:text="ROOM 3"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_grey"
+                android:layout_centerInParent="true"
+                 android:onClick="onRoomButtonClick"
+               />
+        </RelativeLayout>
+
+        <!--
+             ListView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="#ff00ff00" android:cacheColorHint="#ff00ff00"/
+        -->
+
+    </LinearLayout>
+    
+    	<RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <com.example.spheroapp.CalibrationImageButtonView
+                android:id="@+id/calibration_image_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="#00000000"
+                android:scaleType="centerInside"
+                app:calibration_circle_radius="100dp"
+                app:foreground_color="#FFFFFFFF"
+                app:widget_orientation="above"
+                android:visibility="invisible" />
+
+            <orbotix.view.calibration.CalibrationView
+                android:id="@+id/calibration_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        
+    	</FrameLayout>
+    		
+    <orbotix.view.connection.SpheroConnectionView
+            android:id="@+id/sphero_connection_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#FFFFFF" />
+
+</FrameLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Guideo</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_allen_main">AllenMain</string>
+    <string name="title_activity_collision">CollisionActivity</string>
+    <string name="collision_detected">Obstacle detected!</string>
+    <string name="collision_detector">Collision detector</string>
+    <string name="control_sphero">Control Sphero</string>
+
+</resources>
